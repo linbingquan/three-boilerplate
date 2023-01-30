@@ -55,8 +55,6 @@ function init() {
   const container = document.querySelector("#container")!;
 
   viewHelper = new ViewHelper(camera, container);
-  viewHelper.controls = controls;
-  controls.center = controls.target;
 
   stats = Stats();
 
@@ -64,6 +62,7 @@ function init() {
   document.body.appendChild(stats.dom);
   const dom = document.querySelector("#view-helper")!;
   dom.addEventListener("pointerup", (event) => {
+    viewHelper.center = controls.target;
     viewHelper.handleClick(event);
   });
 
