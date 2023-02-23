@@ -91,10 +91,7 @@ function animationLoop() {
     needsUpdate = true;
   }
 
-  if (needsUpdate === true) {
-    stats.update();
-    render();
-  }
+  if (needsUpdate === true) render();
 }
 
 function animate() {
@@ -103,6 +100,7 @@ function animate() {
 }
 
 function render() {
+  stats.update();
   renderer.render(scene, camera);
 
   renderer.autoClear = false;
